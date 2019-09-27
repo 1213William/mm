@@ -34,7 +34,7 @@ class MmPipeline(object):
         # print(collection_url)
         if not os.path.exists(collection_url):
             os.mkdir(collection_url)
-        for i in range(len(img_list) + 1):
+        for i in range(len(img_list)):
             cmp_url = os.path.join(collection_url, str(i))
             with open(cmp_url + '.jpg', 'wb') as fp:
                 fp.write(requests.get(img_list[i], headers=headers).content)
